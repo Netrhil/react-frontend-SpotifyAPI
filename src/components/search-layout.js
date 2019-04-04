@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Container, InputGroup, FormControl, Alert  } from 'react-bootstrap';
+import { Button, Container, InputGroup, FormControl, Row,Col } from 'react-bootstrap';
 
 export default function SearchLayout(props) {
   const {   handleChange, 
@@ -8,7 +8,16 @@ export default function SearchLayout(props) {
              } = props;
 
     return(
-        <section className="jumbotron text-center">
+      <section className="jumbotron text-center bg-dark">
+        <Container fluid>
+              <h1 className="text-light"> Search albums in Spotify </h1>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/2000px-Spotify_logo_without_text.svg.png" 
+                  alt=""
+                  width="40"
+                  height="40"
+                  />
+        </Container>
+        <br/>
         <Container> 
           <InputGroup className="mb-3">
             <FormControl
@@ -19,7 +28,7 @@ export default function SearchLayout(props) {
               value={searchInput}
             />
             <InputGroup.Append>
-              <Button variant="outline-secondary" onClick={()=>{handleSearch()}} >Search</Button>
+              <Button variant="outline-success" onClick={()=>{handleSearch()}} >Search</Button>
             </InputGroup.Append>
           </InputGroup>
         </Container>

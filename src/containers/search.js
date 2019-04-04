@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { toast } from 'react-toastify';
 
 import SearchLayout from '../components/search-layout';
-import { searchAlbums } from '../actions/index';
+import { searchAlbums, charging } from '../actions/index';
 
 
 
@@ -21,7 +21,6 @@ class Search extends Component {
     }
 
     handleChangeInput = (e) => {
-        console.log("valor",e.target.value)
         this.setState({
             searchInput: e.target.value
         }) 
@@ -33,6 +32,7 @@ class Search extends Component {
         if(!this.state.searchInput) {
             toast.warn("you must enter an album");
         } else {
+            this.props.dispatch(charging());
             this.props.dispatch(searchAlbums(searchInput, 0));
         }
     }

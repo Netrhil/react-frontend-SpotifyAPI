@@ -1,11 +1,11 @@
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
 
-export default function Album(props) {
+export function Album(props) {
     const { releaseDate , name, image , artist} = props;
 
     return(
-        <Col md={4}>
+        <Col md={3}>
             <div className="card mb-4 box-shadow">
                 <Card.Img className="card-img-top" variant="top" src={image} data-holder-rendered="true"/>
                 <Card.Body>
