@@ -30,3 +30,6 @@ To run the server
 ```
 npm run start
 ```
+
+**Server runnning in ttp://localhost:5000/**
+
