@@ -8,7 +8,7 @@ import { ToastContainer } from 'react-toastify';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'react-toastify/dist/ReactToastify.css';
-import './styles/styles.css';
+import '../src/styles/styles.css';
 
 class App extends Component {
   

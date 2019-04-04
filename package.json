@@ -2,7 +2,9 @@
   "name": "falabella-test-frontend",
   "version": "0.1.0",
   "private": true,
+  "main": ".src/index.js",
   "dependencies": {
+    "@babel/runtime": "^7.4.3",
     "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
     "react": "^16.8.6",
@@ -15,8 +17,8 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "parcel ./public/index.html -p 5000",
+    "build": "parcel build ./public/index.html/",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -30,6 +32,12 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-transform-runtime": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
+    "parcel-bundler": "^1.12.3",
     "redux-devtools": "^3.5.0",
     "redux-devtools-extension": "^2.13.8"
   }
