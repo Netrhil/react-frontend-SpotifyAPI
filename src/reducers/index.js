@@ -1,8 +1,13 @@
-import { ADD_ALBUMS_TO_STORE} from '../actions/index';
+import { ADD_ALBUMS_TO_STORE, LOAD_DATA_FAILURE} from '../actions/index';
 
 const initialState = {
     albums: [],
-    nextOffset : false
+    nextOffset : false,
+    alert : false,
+    alertContent: {
+        message: "",
+        type: ""
+    }
 }
 
 export default function searchApp(state = initialState, action) {
@@ -13,7 +18,21 @@ export default function searchApp(state = initialState, action) {
             return({
                 ...state,
                 albums: action.payload.albums,
-                nextOffset: action.payload.nextOffset
+                nextOffset: action.payload.nextOffset,
+                alert : false,
+                alertContent: {
+                    message: "",
+                    type: ""
+                }
+            })
+        
+        case LOAD_DATA_FAILURE: 
+            return({
+                alert : true,
+                alertContent: {
+                    message: "an unexpected error has occurred",
+                    type: "error"
+                }
             })
 
         default:

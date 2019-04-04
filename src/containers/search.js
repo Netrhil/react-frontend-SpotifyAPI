@@ -1,13 +1,23 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { toast } from 'react-toastify';
 
 import SearchLayout from '../components/search-layout';
+import { searchAlbums } from '../actions/index';
 
 
 
 class Search extends Component {
 
     state = {
-        searchInput: ''
+        searchInput: '',
+    }
+
+    componentDidMount() {
+        toast.configure({
+            autoClose: 3000,
+            draggable: false,
+          });
     }
 
     handleChangeInput = (e) => {
@@ -18,7 +28,13 @@ class Search extends Component {
     }
 
     handleSearch = () => {
-        console.log("me clikeaaan")
+        const { searchInput } = this.state;
+
+        if(!this.state.searchInput) {
+            toast.warn("you must enter an album");
+        } else {
+            this.props.dispatch(searchAlbums(searchInput, 0));
+        }
     }
 
     render() {
@@ -34,4 +50,4 @@ class Search extends Component {
     }
 }
 
-export default Search;
+export default connect()(Search);
