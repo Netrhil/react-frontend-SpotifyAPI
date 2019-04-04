@@ -9,10 +9,6 @@ import * as serviceWorker from './serviceWorker';
 
 import searchApp from './reducers/index';
 
-import getAlbums from './services/node-api';
-
-getAlbums("polaris", 20);
-
 let store = createStore(
     searchApp,
     composeWithDevTools(
