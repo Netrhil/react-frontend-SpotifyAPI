@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Container, InputGroup, FormControl, Row,Col } from 'react-bootstrap';
+import { Button, Container, InputGroup, FormControl } from 'react-bootstrap';
 
 export default function SearchLayout(props) {
   const {   handleChange, 
